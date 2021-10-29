@@ -18,7 +18,7 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 What command did you use, and what was its output?
 ----------
 
-
+$ date
 
 ==========
 2. Print out a calendar for this month.
@@ -34,7 +34,7 @@ What command did you use, and what was its output?
 What commands did you use to do this?
 ----------
 
-
+cd ~ 
 
 ==========
 4. Create an empty file called copy_to_backup.sh.  Verify that the file exists.
@@ -42,22 +42,23 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+$ mkdir copy_to_backup.sh
 
 ==========
 5. What are the permissions on your copy_to_backup.sh.
 
 What command did you use to find the permissions?
 ----------
-
-
+$ ls -l copy_to_backup.sh
 
 ==========
 6. Change the permissions so that this file is executable by the user.  Verify the new permissions.
 
 What commands did you use to do this?  What was the output?
 ----------
+$ chmod +x copy_to_backup.sh 
 
+drwxr-xr-x 1 kacie 197609 0 Oct 28 19:25 
 
 
 ==========
@@ -68,7 +69,9 @@ $ ./copy_to_backup.sh
 What command did you use to try to execute the file?  What happens?
 ----------
 
+./copy_to_backup.sh
 
+Acknowledges directory.
 
 ==========
 8. Open the file with nano
@@ -76,7 +79,9 @@ What command did you use to try to execute the file?  What happens?
 What command did you use to do this?
 ----------
 
+touch copy_to_backup.sh
 
+nano copy_to_backup.sh
 
 ==========
 9. In your file, write the following commands:
@@ -87,12 +92,15 @@ c. print out "I'm done backing up"
 
 Write out the code in your file below...
 ----------
-
-
+mkdir -p backup
+cp *.txt backup 
+echo "I'm done backing up"
 
 ==========
 10. Create a directory in your home called test
 ----------
+mkdir test
+
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
 
@@ -100,14 +108,16 @@ What commands did you use to do this?
 ----------
 
 
+cd test 
 
+mkdir 1.txt 2.txt
 ==========
 12. Move the script that you created into this directory.
 
 What commands did you use to do this?
 ----------
 
-
+$ mv *.txt test
 
 ==========
 13. Run your script.
@@ -115,10 +125,57 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+$ cd test
+$ cat copy_to_backup.sh 
 
 ==========
 14. Verify that a backup folder was created in your home directory... with copies of the files present.
 
 What commands did you use to do this?  Show the output.
 ----------
+$ ls
+
+
+'3D Objects'/
+ AppData/
+'Application Data'@
+ backup/
+ Contacts/
+ Cookies@
+'Creative Cloud Files'/
+ Desktop/
+ Documents/
+ Downloads/
+ Favorites/
+ Links/
+'Local Settings'@
+ Music/
+'My Documents'@
+ NetHood@
+ NTUSER.DAT
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ NTUSER.DAT{20c9453b-1349-11ec-920c-744ca177b01a}.TxR.0.regtrans-ms
+ NTUSER.DAT{20c9453b-1349-11ec-920c-744ca177b01a}.TxR.1.regtrans-ms
+ NTUSER.DAT{20c9453b-1349-11ec-920c-744ca177b01a}.TxR.2.regtrans-ms
+ NTUSER.DAT{20c9453b-1349-11ec-920c-744ca177b01a}.TxR.blf
+ NTUSER.DAT{20c9453c-1349-11ec-920c-744ca177b01a}.TM.blf
+ NTUSER.DAT{20c9453c-1349-11ec-920c-744ca177b01a}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{20c9453c-1349-11ec-920c-744ca177b01a}.TMContainer00000000000000000002.regtrans-ms
+ ntuser.ini
+ OneDrive/
+ Pictures/
+ PrintHood@
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+'Start Menu'@
+ Templates@
+ test/
+ Videos/
+ 
+ cd test 
+ 
+ $ ls
+1.txt/  2.txt/  copy_to_backup.sh
